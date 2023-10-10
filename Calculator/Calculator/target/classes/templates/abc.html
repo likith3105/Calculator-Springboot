@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    
+    
+    
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+      select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        p {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <form action="/calculate" method="get">
+        <label for="operation">Select operation:</label>
+<select name="operation" id="operation">
+    <option value="add">Add</option>
+    <option value="subtract">Subtract</option>
+    <option value="multiply">Multiply</option>
+    <option value="divide">Divide</option>
+    <option value="modulus">Modulus</option>
+    <option value="percentage">Percentage</option>
+</select>
+
+        <br>
+        <label for="a">Number A:</label>
+        <input type="number" name="a" step="0.01" required>
+        <br>
+        <label for="b">Number B:</label>
+        <input type="number" name="b" step="0.01" required>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+    <br>
+    <p>Result: <span th:text="${result}">0.0</span></p>
+
+</body>
+</html>
